@@ -2,6 +2,9 @@ const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const path = require('path');
+const multer = require('multer');
+const uuidv4 = require('uuidv4');
+
 
 const helpers = require('./utils/helpers');
 
@@ -40,6 +43,11 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(routes);
+
+//multer code try
+app.use(express.static('public'));
+
+
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
