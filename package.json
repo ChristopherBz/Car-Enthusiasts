@@ -1,7 +1,7 @@
 {
-  "name": "mvc-tech-blog",
+  "name": "Car-Enthusiasts",
   "version": "1.0.0",
-  "description": "Model-View-Controller (MVC) Tech Blog",
+  "description": "Car-Enthusiasts Blog",
   "main": "server.js",
   "scripts": {
     "test": "jest",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TristanLibeau/MVC-Tech-Blog.git"
+    "url": "https://github.com/ChristopherBz/Car-Enthusiasts"
   },
   "author": "Tristan Libeau",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TristanLibeau/MVC-Tech-Blog/issues"
+    "url": "https://github.com/ChristopherBz/Car-Enthusiasts/issues"
   },
-  "homepage": "https://github.com/TristanLibeau/MVC-Tech-Blog#readme",
+  "homepage": "https://github.com/ChristopherBz/Car-Enthusiasts#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bulma": "^0.9.0",
@@ -30,7 +30,8 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.12",
-    "sequelize": "^5.21.13"
+    "sequelize": "^5.21.13",
+    "multer": "^1.3.0"
   },
   "devDependencies": {
     "@creativebulma/bulma-divider": "^1.1.0",
