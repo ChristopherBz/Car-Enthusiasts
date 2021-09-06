@@ -2,6 +2,18 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
+const upload = multer({dest: '../../public/upload'});
+
+
+
+
+router.post('/upload', (req, res) => {
+  //if(req.file) {
+      console.log(req.file);
+  //}
+ // else throw 'error';
+});
+
 
 // get all users
 router.get('/', (req, res) => {

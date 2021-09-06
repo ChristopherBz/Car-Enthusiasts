@@ -2,7 +2,7 @@
     <a href="/dashboard" class="is-pulled-right"> &larr; back to dashboard</a>
   <h2 class="title">create new blog post</h2><hr>
 
-  <form class="new-post-form">
+  <form class="new-post-form" action="api/posts/upload" method="post" enctype="multipart/form-data">
     <div>
       <label for="post-title" >title:</label>
       <input class="input" type="text" id="post-title" name="post-title" placeholder="insert blog title here"/>
@@ -10,8 +10,13 @@
     <div>
       <label for="post-content">content:</label>
       <input class="textarea is-large" id="post-content" name="post-content" placeholder="insert blog content here"/>
+      <h3>Upload Image</h3>
+ 
+      
+              <input type="file" accept="image/*" name="photo" >
+      
     </div>
-    <button type="submit" class="button is-primary is-pulled-right">create post</button>
+    <button type="submit" class="button is-primary is-pulled-right" value="upload">create post</button>
   </form>
 </section>
 
