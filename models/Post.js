@@ -27,8 +27,12 @@ Post.init(
         references: {
           model: 'user',
           key: 'id'
-        }
+        },
+      image_name: {
+        type: DataTypes.STRING,
+        allowNull: false
       }
+    }
     },
     {
       sequelize,

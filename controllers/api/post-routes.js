@@ -5,11 +5,28 @@ const withAuth = require('../../utils/auth');
 const multer = require('multer');
 const upload = multer({dest: './public/upload/'});
 
+
 router.post('/upload', upload.single('avatar'), (req, res) => {
   console.log("Hi");
   console.log(req.body.postTitle);
   console.log(req.body.postContent);
   console.log(req.file);
+  Post.create({
+    title: req.body.postTitle,
+    post_content: req.body.postContent,
+    user_id: req.session.user_id,
+    image_name: req.file.filename
+  })
+  .then(dbPostData => {
+    const postData = dbPostData.map((data) => data.get({ plain: true }))
+    res.render('dashboard', {
+      postdata,
+   });
+  })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 });
 
 
