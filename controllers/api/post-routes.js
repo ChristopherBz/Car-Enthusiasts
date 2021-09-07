@@ -2,16 +2,14 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
-const upload = multer({dest: '../../public/upload'});
+const multer = require('multer');
+const upload = multer({dest: './public/upload/'});
 
-
-
-
-router.post('/upload', (req, res) => {
-  //if(req.file) {
-      console.log(req.file);
-  //}
- // else throw 'error';
+router.post('/upload', upload.single('avatar'), (req, res) => {
+  console.log("Hi");
+  console.log(req.body.postTitle);
+  console.log(req.body.postContent);
+  console.log(req.file);
 });
 
 
