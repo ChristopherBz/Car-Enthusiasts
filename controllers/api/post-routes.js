@@ -11,76 +11,30 @@ router.post('/upload', upload.single('avatar'), (req, res) => {
   console.log(req.body.postTitle);
   console.log(req.body.postContent);
   console.log(req.file);
-  Post.create({
-    title: req.body.postTitle,
-    post_content: req.body.postContent,
-    user_id: req.session.user_id,
-    image_name: req.file.filename
-  })
-  .then(dbPostData => {
-    const postData = dbPostData.map((data) => data.get({ plain: true }))
-    res.render('dashboard', {
-      postdata,
-   });
-  })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-});
 
-
-// get all users
-router.get('/', (req, res) => {
-    console.log('======================');
+  (async() => {
+    console.log('before start');
+  
+    await Post.create({
+      title: req.body.postTitle,
+      post_content: req.body.postContent,
+      user_id: req.session.user_id,
+      image_name: req.file.filename
+    });
+    
     Post.findAll({
-        attributes: [
-            'id',
-            'title',
-            'created_at',
-            'post_content'
-        ],
-      order: [['created_at', 'DESC']],
-      include: [
-        // Comment model here -- attached username to comment
-        {
-          model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-          include: {
-            model: User,
-            attributes: ['username', 'twitter', 'github']
-          }
-        },
-        {
-          model: User,
-          attributes: ['username', 'twitter', 'github']
-        },
-      ]
-    })
-      .then(dbPostData => res.json(dbPostData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-
-  router.get('/:id', (req, res) => {
-    Post.findOne({
       where: {
-        id: req.params.id
+        // use the ID from the session
+        user_id: req.session.user_id
       },
       attributes: [
         'id',
         'title',
         'created_at',
-        'post_content'
+        'post_content',
+        'image_name'
       ],
       include: [
-        // include the Comment model here:
-        {
-          model: User,
-          attributes: ['username', 'twitter', 'github']
-        },
         {
           model: Comment,
           attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -88,20 +42,102 @@ router.get('/', (req, res) => {
             model: User,
             attributes: ['username', 'twitter', 'github']
           }
+        },
+        {
+          model: User,
+          attributes: ['username', 'twitter', 'github']
         }
       ]
     })
       .then(dbPostData => {
-        if (!dbPostData) {
-          res.status(404).json({ message: 'No post found with this id' });
-          return;
-        }
-        res.json(dbPostData);
+        // serialize data before passing to template
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        res.render('dashboard', { posts, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
+
+      console.log('after start');
+    })();
+  });
+
+
+  // get all users
+  router.get('/', (req, res) => {
+      console.log('======================');
+      Post.findAll({
+          attributes: [
+              'id',
+              'title',
+              'created_at',
+              'post_content',
+              'image_name'
+          ],
+        order: [['created_at', 'DESC']],
+        include: [
+          // Comment model here -- attached username to comment
+          {
+            model: Comment,
+            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+            include: {
+              model: User,
+              attributes: ['username', 'twitter', 'github']
+            }
+          },
+          {
+            model: User,
+            attributes: ['username', 'twitter', 'github']
+          },
+        ]
+      })
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+    });
+
+    router.get('/:id', (req, res) => {
+      Post.findOne({
+        where: {
+          id: req.params.id
+        },
+        attributes: [
+          'id',
+          'title',
+          'created_at',
+          'post_content',
+          'image_name'
+        ],
+        include: [
+          // include the Comment model here:
+          {
+            model: User,
+            attributes: ['username', 'twitter', 'github']
+          },
+          {
+            model: Comment,
+            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+            include: {
+              model: User,
+              attributes: ['username', 'twitter', 'github']
+            }
+          }
+        ]
+      })
+        .then(dbPostData => {
+          if (!dbPostData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+          }
+          res.json(dbPostData);
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+    });
   });
 
 router.post('/', withAuth, (req, res) => {

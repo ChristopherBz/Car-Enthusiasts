@@ -2,7 +2,7 @@
 
 ## Description
   ![License](https://img.shields.io/badge/License-MIT-blue.svg "License Badge")  
-Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
+Writing about cars is a passion. Car lovers spend plenty of time reading and writing about styles, models, and new developments. This blog contains:
 1.	It will have Node.js and Express.js to create a RESTful API 
 2.	We will Handlebars.js for page layout
 3.	MySQL and the Sequelize ORM will be used to manage & structure database
@@ -12,7 +12,7 @@ Writing about tech can be just as important as making it. Developers spend plent
 7.	Each user will need to create an account before commenting/posting (Authentication) (express-session and cookies)
 8.	We will protect API keys and sensitive information with environment variables
 
-This is a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. This app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. It is deployed to Heroku.
+It's a CMS-style blog site similar to a Wordpress site, where car lovers can publish their blog posts and comment on other fans posts as well. This app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. It is deployed to Heroku.
 
 
 ## Table of Contents
