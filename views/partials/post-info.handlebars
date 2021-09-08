@@ -13,6 +13,7 @@
   </header>
 
     <div class="card-content">
+
         <div class="content has-text-justified">
             {{post_content}}
         </div>
@@ -22,5 +23,5 @@
                 
                  | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             </div>
-        
+        <img src="/upload/{{image_name}}">
     </div>
