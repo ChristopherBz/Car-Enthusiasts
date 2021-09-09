@@ -54,7 +54,7 @@ h2 {
   background-color: gold;
   color: #333;
 }
-.button.is-primary :hover {
+.button.is-primary:hover {
   background-color: goldenrod;
 }
  
