@@ -28,6 +28,14 @@ h2 {
   a:hover {
     color: #3486eb;
   }
+
+  .mt-2 {
+    background-color: transparent;
+  }
+
+  .navbar-item {
+    color:white;
+  }
   
   button {
     border: 0;
@@ -38,6 +46,18 @@ h2 {
     border-radius: 5px;
   }
   
+.button.is-danger {
+  background-color: red;
+}
+
+.button.is-primary {
+  background-color: gold;
+  color: #333;
+}
+.button.is-primary :hover {
+  background-color: goldenrod;
+}
+ 
   .post-list {
     margin: 0;
     padding: 0;
