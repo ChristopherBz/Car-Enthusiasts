@@ -1,6 +1,6 @@
 # Car-Enthusiasts
-
-Find the deployed application here:
+https://github.com/ChristopherBz/Car-Enthusiasts/blob/c298a76953a9eebddeb22ecba88116ba76647126/assets/carblog.JPG  
+Find the deployed application here:https://car-enthusiasts.herokuapp.com/
 
 ## Description
   ![License](https://img.shields.io/badge/License-MIT-blue.svg "License Badge")  
@@ -27,10 +27,10 @@ It's a CMS-style blog site similar to a Wordpress site, where car lovers can pub
 - [Questions](#Contact-Information)  
 
 ### Demo
-![Screenshot]()
+![Screenshot](https://github.com/ChristopherBz/Car-Enthusiasts/blob/c298a76953a9eebddeb22ecba88116ba76647126/assets/Car%20Enthusiats.gif)
 
 ### Deployed
-Find the deployed application here: 
+Find the deployed application here: https://car-enthusiasts.herokuapp.com/
 
 ### User-Story
 AS A car enthusiast,
