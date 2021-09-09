@@ -88,7 +88,11 @@ h2 {
   main {
     flex: 1;
     padding: 2% 4%;
-    background-image: url("D:\Project 2\potential project2\assets\img\car-blog.jpg");
+  }
+
+  .bccolor {
+    
+    background-color: #fafafa;
   }
   
   .btn-no-style {
