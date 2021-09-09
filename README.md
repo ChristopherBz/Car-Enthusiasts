@@ -1,5 +1,7 @@
 # Car-Enthusiasts
 
+Find the deployed application here:
+
 ## Description
   ![License](https://img.shields.io/badge/License-MIT-blue.svg "License Badge")  
 Writing about cars is a passion. Car lovers spend plenty of time reading and writing about styles, models, and new developments. This blog contains:
@@ -17,7 +19,7 @@ It's a CMS-style blog site similar to a Wordpress site, where car lovers can pub
 
 ## Table of Contents
 - [Demo](#Demo)
-- [Tutorial](#Tutorial)
+- [Deployed](#Deployed)
 - [User Story](#User-Story)
 - [Installation](#installation)
 - [Technology](#technology)
@@ -27,8 +29,8 @@ It's a CMS-style blog site similar to a Wordpress site, where car lovers can pub
 ### Demo
 ![Screenshot]()
 
-### Tutorial
-View the how to video here: 
+### Deployed
+Find the deployed application here: 
 
 ### User-Story
 AS A car enthusiast,
@@ -58,7 +60,11 @@ Node.js provides a set of asynchronous I/O primitives in its standard library th
 Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
 
 3. MySQL:  
-MySQL is a freely available open source Relational Database Management System (RDBMS) that uses Structured Query Language (SQL). SQL is the most popular language for adding, accessing and managing content in a database. It is most noted for its quick processing, proven reliability, ease and flexibility of use.
+MySQL is a freely available open source Relational Database Management System (RDBMS) that uses Structured Query Language (SQL). SQL is the most popular language for adding, accessing and managing content in a database. It is most noted for its quick processing, proven reliability, ease and flexibility of use.  
+
+4. Express-handlebars: Handlebars is one of the most used templating engines for web applications “competing” with other well-known ones like Mustache js, Pug, EJS and others. It’s especially used on the server side along with the express js framework.  
+
+5. Others: dotenv package(https://www.npmjs.com/package/dotenv), bcrypt package (https://www.npmjs.com/package/bcrypt), express-session (https://www.npmjs.com/package/express-session) & connect-session-sequelize (https://www.npmjs.com/package/connect-session-sequelize).  
 
 ## License
 
@@ -67,4 +73,5 @@ This application is released under ![License](https://img.shields.io/badge/Licen
 
 ## Contact-Information:
     *GitHub Username: ChristopherBz
-    *GitHub Email: Christopher8611@outlook.com
+    *GitHub Username: TristanLibeau
+    *GitHub Username: ivany9
